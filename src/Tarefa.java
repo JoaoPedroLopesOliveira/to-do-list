@@ -1,45 +1,48 @@
+import java.time.LocalDate;
+
 public class Tarefa {
 
-    private String nome;
-    private String prazo;
-    private int importancia;
+    private String descricao;
+    private LocalDate prazo;
+    private int prioridade;
 
-    public Tarefa(String nome) {
-        this.nome = nome;
+    public Tarefa(String descricao) {
+        this.descricao = descricao;
     }
 
-    public Tarefa(String nome, String prazo, int importancia) {
-        this.nome = nome;
+    public Tarefa(String descricao, LocalDate prazo, int prioridade) {
+        this.descricao = descricao;
         this.prazo = prazo;
-        this.importancia = importancia;
+        this.prioridade = prioridade;
     }
 
-    public void imprime() {
-        System.out.println("Tarefa: " + this.nome + (this.importancia != 0 ? "\nGrau de importancia: " + this.importancia + "\nPrazo para: " + this.prazo : ""));
+    @Override
+    public String toString() {
+        return descricao + "| prioridade: " + prioridade + " | prazo: " + prazo;
     }
 
-    public String getPrazo() {
+    public LocalDate getPrazo() {
         return prazo;
     }
 
-    public void setPrazo(String prazo) {
+    public void setPrazo(LocalDate prazo) {
         this.prazo = prazo;
     }
 
-    public int getImportancia() {
-        return importancia;
+    public int getPrioridade() {
+        return prioridade;
     }
 
-    public void setImportancia(int importancia) {
-        this.importancia = importancia;
+    public void setPrioridade(int prioridade) {
+        this.prioridade = prioridade;
     }
 
-    public String getNome() {
-        return nome;
+    public String getdescricao() {
+        return descricao;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setdescricao(String descricao) {
+        this.descricao = descricao;
     }
 
 
